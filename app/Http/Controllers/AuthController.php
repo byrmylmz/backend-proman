@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 
 class AuthController extends Controller
 {
@@ -13,7 +14,7 @@ class AuthController extends Controller
         $http = new \GuzzleHttp\Client;
 
         try {
-            $response = $http->post('http://api.alakod.com/oauth/token', [
+            $response = $http->post('http://backend-proman.test/oauth/token', [
                 'form_params' => [
                     'grant_type' => 'password',
                     'client_id' => 2,
