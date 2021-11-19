@@ -18,8 +18,8 @@ class AuthController extends Controller
             $response = $http->post(config('services.passport.login_endpoint'), [
                 'form_params' => [
                     'grant_type' => 'password',
-                    'client_id' => 2,
-                    'client_secret' => 'gbcoHDWSLNIPZEuKHQ0DMbodMBw9VaDAVERjmbkd',
+                    'client_id' => config('services.passport.client_id'),
+                    'client_secret' => config('services.passport.client_secret'),
                     'username' => $request->username,
                     'password' => $request->password,
                 ]
