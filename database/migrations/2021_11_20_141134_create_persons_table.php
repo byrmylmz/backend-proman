@@ -16,7 +16,7 @@ class CreatePersonsTable extends Migration
         Schema::create('persons', function (Blueprint $table) {
             $table->id();
             $table->string('person_name');
-            $table->foreignId('flats_id')->constrained()->onDelete('cascade');
+            //$table->foreignId('flats_id')->constrained()->onDelete('cascade');
             $table->foreignId('users_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
