@@ -58,6 +58,7 @@ class SiteController extends Controller
      */
     public function destroy(Site $site)
     {
-        //
+        $site->delete();
+        return response()->json('Deleted',200);
     }
 }
