@@ -20,11 +20,18 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+/**
+ * Normal Route
+ */
+Route::apiResource('sites',SiteController::class);
+
+
+/**
+ * Login Register and Logout
+ */
 Route::post('register',[AuthController::class,'register']);
 Route::post('login',[AuthController::class,'login']);
+Route::post('logout', [AuthController::class,'logout']);
 
-Route::middleware('auth:api')->post('/logout', [AuthController::class,'logout']);
-
-Route::Resource('sites',SiteController::class);
 
 
