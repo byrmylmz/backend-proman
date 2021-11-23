@@ -32,7 +32,7 @@ class FlatController extends Controller
             'users_id'=>$request->users_id,
         ]);
 
-        return response()->toJson($flat,200);
+        return response($flat,201);
     }
 
     /**
