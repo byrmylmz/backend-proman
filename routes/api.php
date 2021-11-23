@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlockController;
 use App\Http\Controllers\FlatConstroller;
 use App\Http\Controllers\FlatController;
+use App\Http\Controllers\PersonController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,7 @@ Route::get('users',function(){
 Route::apiResource('sites',SiteController::class);
 Route::apiResource('blocks',BlockController::class);
 Route::apiResource('flats',FlatController::class);
+Route::apiResource('persons',PersonController::class);
 
 /**
  * Login Register and Logout
