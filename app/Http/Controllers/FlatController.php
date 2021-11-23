@@ -32,7 +32,7 @@ class FlatController extends Controller
             'users_id'=>$request->users_id,
         ]);
 
-        return response($flat,201);
+        return $flat->toJson(JSON_PRETTY_PRINT);
     }
 
     /**
@@ -56,7 +56,7 @@ class FlatController extends Controller
     public function update(Request $request, Flat $flat)
     {
         $flat->update($request->all());
-        return response()->toJson($flat,200);
+        return $flat->toJson(JSON_PRETTY_PRINT);
     }
 
     /**
@@ -68,6 +68,6 @@ class FlatController extends Controller
     public function destroy(Flat $flat)
     {
         $flat->delete();
-        return Response()->toJson('Deleted',200);
+        return Response('Deleted',201);
     }
 }
