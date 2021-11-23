@@ -56,6 +56,7 @@ class BlockController extends Controller
     public function update(Request $request, Block $block)
     {
         $block->update($request->all());
+        return response()->json($block);
     }
 
     /**
@@ -66,6 +67,7 @@ class BlockController extends Controller
      */
     public function destroy(Block $block)
     {
-        //
+        $block->delete();
+        return response()->json('deleted',200);
     }
 }
