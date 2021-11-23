@@ -15,7 +15,7 @@ class FlatConstroller extends Controller
     public function index()
     {
         $flats=Flat::all();
-        return response()->toJson($flats);
+        return $flats->toJson(JSON_PRETTY_PRINT);
     }
 
     /**
