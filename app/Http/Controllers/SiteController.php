@@ -14,7 +14,10 @@ class SiteController extends Controller
      */
     public function index()
     {
-        return Site::all();
+        $site= Site::all();
+        return $site->toJson(JSON_PRETTY_PRINT);
+
+
     }
 
 

@@ -5,19 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Site extends Model
+class Block extends Model
 {
     use HasFactory;
 
     protected $fillable=[
-        'site_name',
+        'block_name',
+        'sites_id',
         'users_id'
     ];
 
-    protected $hidden =[
+    protected $hidden=[
         'created_at',
         'updated_at'
     ];
+
 
 
 }
