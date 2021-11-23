@@ -28,7 +28,7 @@ Route::get('users',function(){
  */
 Route::apiResource('sites',SiteController::class);
 Route::apiResource('blocks',BlockController::class);
-Route::apiResource('flats',FlatConstroller::class);
+Route::apiResource('flats',FlatController::class);
 
 /**
  * Login Register and Logout
