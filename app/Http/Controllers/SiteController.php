@@ -33,7 +33,7 @@ class SiteController extends Controller
         //I'LL ADD VALIDATION HERE.
         $sites=site::create([
             'site_name'=>$request->site_name,
-            'user_id'=>$request->users_id
+            'user_id'=>$request->user_id
         ]);
         return response($sites,201);
     }
