@@ -17,7 +17,7 @@ class CreatePersonsTable extends Migration
             $table->id();
             $table->string('person_name');
             //$table->foreignId('flats_id')->constrained()->onDelete('cascade');
-            $table->foreignId('users_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

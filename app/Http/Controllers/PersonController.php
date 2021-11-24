@@ -28,7 +28,7 @@ class PersonController extends Controller
     {
         $person=Person::create([
             'person_name'=>$request->person_name,
-            'users_id'=>$request->users_id
+            'user_id'=>$request->user_id
         ]);
 
         return $person->toJson(JSON_PRETTY_PRINT);

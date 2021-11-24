@@ -28,8 +28,8 @@ class BlockController extends Controller
     {
         $blocks=Block::create([
             'block_name'=>$request->block_name,
-            'sites_id'=>$request->sites_id,
-            'users_id'=>$request->users_id,
+            'site_id'=>$request->site_id,
+            'user_id'=>$request->user_id,
         ]);
 
         return response($blocks,201);

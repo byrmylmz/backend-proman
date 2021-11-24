@@ -14,7 +14,8 @@ class SiteController extends Controller
      */
     public function index()
     {
-        $site= Site::all();
+        $site= Site::with('blocks')->get();
+
         return $site->toJson(JSON_PRETTY_PRINT);
 
 
@@ -32,7 +33,7 @@ class SiteController extends Controller
         //I'LL ADD VALIDATION HERE.
         $sites=site::create([
             'site_name'=>$request->site_name,
-            'users_id'=>$request->users_id
+            'user_id'=>$request->users_id
         ]);
         return response($sites,201);
     }

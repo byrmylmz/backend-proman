@@ -20,6 +20,9 @@ class Block extends Model
         'updated_at'
     ];
 
-
+    public function site()
+    {
+        return $this->belongsTo(Site::class);
+    }
 
 }

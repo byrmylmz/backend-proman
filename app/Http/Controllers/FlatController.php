@@ -28,8 +28,8 @@ class FlatController extends Controller
     {
         $flat=Flat::create([
             'flat_name'=>$request->flat_name,
-            'blocks_id'=>$request->blocks_id,
-            'users_id'=>$request->users_id,
+            'block_id'=>$request->block_id,
+            'user_id'=>$request->user_id,
         ]);
 
         return $flat->toJson(JSON_PRETTY_PRINT);

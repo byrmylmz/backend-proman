@@ -19,5 +19,14 @@ class Site extends Model
         'updated_at'
     ];
 
+    /**
+     * Get the flats for the site
+     */
+
+     public function blocks()
+     {
+         return $this->hasMany(Block::class);
+     }
+
 
 }

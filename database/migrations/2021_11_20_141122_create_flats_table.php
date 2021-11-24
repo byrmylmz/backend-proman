@@ -16,8 +16,8 @@ class CreateFlatsTable extends Migration
         Schema::create('flats', function (Blueprint $table) {
             $table->id();
             $table->string('flat_name');
-            $table->foreignId('blocks_id')->constrained()->onDelete('cascade');
-            $table->foreignId('users_id')->constrained()->onDelete('cascade');
+            $table->foreignId('block_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
