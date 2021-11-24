@@ -11,8 +11,8 @@ class Block extends Model
 
     protected $fillable=[
         'block_name',
-        'sites_id',
-        'users_id'
+        'site_id',
+        'user_id'
     ];
 
     protected $hidden=[

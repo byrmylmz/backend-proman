@@ -12,7 +12,7 @@ class Person extends Model
 
     protected $fillable=[
         'person_name',
-        'users_id'
+        'user_id'
     ];
 
     protected $hidden=[

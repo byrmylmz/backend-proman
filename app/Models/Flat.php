@@ -11,8 +11,8 @@ class Flat extends Model
 
     protected $fillable=[
         'flat_name',
-        'blocks_id',
-        'users_id',
+        'block_id',
+        'user_id',
     ];
 
     protected $hidden=[

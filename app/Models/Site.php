@@ -11,7 +11,7 @@ class Site extends Model
 
     protected $fillable=[
         'site_name',
-        'users_id'
+        'user_id'
     ];
 
     protected $hidden =[
