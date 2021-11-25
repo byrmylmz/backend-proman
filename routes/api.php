@@ -2,12 +2,15 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlockController;
-use App\Http\Controllers\FlatConstroller;
 use App\Http\Controllers\FlatController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\VehicleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Resources\UserResource;
+use App\Http\Resources\UserCollection;
+
 use App\Models\User;
 
 /*
@@ -21,8 +24,17 @@ use App\Models\User;
 |
 */
 
-Route::get('users',function(){
-    return User::all();
+
+/**
+ * resources
+ */
+Route::get('/user/{id}', function ($id) {
+    return new UserResource(User::findOrFail($id));
+});
+
+Route::get('/users', function () {
+    return new UserCollection(User::all());
+
 });
 
 /**

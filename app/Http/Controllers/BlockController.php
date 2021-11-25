@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Resources\BlockResource;
 
 use App\Models\Block;
 use Illuminate\Http\Request;
@@ -14,7 +15,7 @@ class BlockController extends Controller
      */
     public function index()
     {
-        $blocks=Block::all();
+        $blocks=Block::with('flats')->get();
         return $blocks->toJson(JSON_PRETTY_PRINT);
     }
 
@@ -43,7 +44,7 @@ class BlockController extends Controller
      */
     public function show(Block $block)
     {
-        //
+        return new BlockResource($block);
     }
 
     /**

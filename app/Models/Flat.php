@@ -19,12 +19,15 @@ class Flat extends Model
         'created_at',
         'updated_at'
     ];
+
     /**
-     * get the site that owns the flat.
+     * Get the site that owns the flat.
      */
-    public function site()
+    public function block()
     {
-        return $this->belongsTo(Site::class);
+        return $this->belongsTo(Block::class);
     }
+
+
 }
 

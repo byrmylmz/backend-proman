@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\SiteCollection;
+use App\Http\Resources\SiteResource;
 use App\Models\Site;
 use Illuminate\Http\Request;
 
@@ -14,13 +16,25 @@ class SiteController extends Controller
      */
     public function index()
     {
-        $site= Site::with('blocks')->get();
+        // $site= Site::with('blocks')->get();
+        // return $site->toJson(JSON_PRETTY_PRINT);
 
-        return $site->toJson(JSON_PRETTY_PRINT);
+        $site=Site::all();
+        return new SiteCollection($site);
 
 
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Site  $person
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Site $site)
+    {
+        return new SiteResource($site);
+    }
 
     /**
      * Store a newly created resource in storage.

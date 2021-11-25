@@ -20,9 +20,22 @@ class Block extends Model
         'updated_at'
     ];
 
+    /**
+     * Get the site that owns the block
+     */
+
     public function site()
     {
         return $this->belongsTo(Site::class);
     }
+
+    /**
+     * Get the flats for the block.
+     */
+
+     public function flats()
+     {
+         return $this->hasMany(Flat::class);
+     }
 
 }
