@@ -14,6 +14,7 @@ class SiteCollection extends ResourceCollection
      */
     public function toArray($request)
     {
+        
         return [
             'data' => $this->collection,
             'test'=>'deneme'
