@@ -14,6 +14,7 @@ class BlockResource extends JsonResource
      */
     public function toArray($request)
     {
+        
         return [
             'block_name' => $this->block_name,
             'flats' => FlatResource::collection($this->flats),

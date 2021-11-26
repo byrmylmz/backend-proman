@@ -19,7 +19,7 @@ class SiteController extends Controller
         // $site= Site::with('blocks')->get();
         // return $site->toJson(JSON_PRETTY_PRINT);
 
-        $site=Site::paginate();
+        $site=Site::with('blocks')->paginate();
         return new SiteCollection($site);
 
 

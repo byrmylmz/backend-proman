@@ -14,7 +14,7 @@ class FlatController extends Controller
      */
     public function index()
     {
-        $flats=Flat::all();
+        $flats=Flat::with('blocks')->get();
         return $flats->toJson(JSON_PRETTY_PRINT);
     }
 
