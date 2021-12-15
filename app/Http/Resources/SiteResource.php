@@ -15,7 +15,6 @@ class SiteResource extends JsonResource
      */
     public function toArray($request)
     {
-       
 
         return [
             'site_name' => $this->site_name,
